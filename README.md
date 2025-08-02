@@ -27,7 +27,7 @@ It allows AI workflows to:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/dify-google-sheets-plugin.git
+git clone https://github.com/KaranChoksey/Plugin_Task.git
 cd dify-google-sheets-plugin
 ```
 ### 2. Setup Virtual Environment
