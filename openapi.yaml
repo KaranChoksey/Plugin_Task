@@ -1,0 +1,66 @@
+paths:
+  /append_row:
+    post:
+      summary: Append a row to the sheet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sheet_id:
+                  type: string
+                row_values:
+                  type: array
+                  items:
+                    type: string
+              required:
+                - sheet_id
+                - row_values
+      responses:
+        '200':
+          description: Success
+
+  /read_sheet:
+    post:
+      summary: Read all rows from the sheet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sheet_id:
+                  type: string
+              required:
+                - sheet_id
+      responses:
+        '200':
+          description: Success
+
+  /update_cell:
+    post:
+      summary: Update a specific cell in the sheet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sheet_id:
+                  type: string
+                cell:
+                  type: string
+                  example: A2
+                value:
+                  type: string
+              required:
+                - sheet_id
+                - cell
+                - value
+      responses:
+        '200':
+          description: Success

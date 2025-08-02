@@ -1,0 +1,32 @@
+Below shows testing the endpoint using curl for appending,viewing the sheet and updating 
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+Curl test for appending rows
+
+C:\Users\Karan\Documents\Plugin_task\dify-google-sheets-plugin>curl -X POST http://127.0.0.1:3334/append_row ^  -H "Content-Type: application/json" ^  -d "{\"sheet_id\": \"1DR1gfwpruxAlkkYFcuWdrx7x5_8cWqTYHiqlAaNPTZU\", \"row_values\": [\"John Doe\", \"john@example.
+com\", \"Sales\"]}"
+{"appended":["John Doe","john@example.com","Sales"],"status":"success"}
+
+C:\Users\Karan\Documents\Plugin_task\dify-google-sheets-plugin>curl -X POST http://127.0.0.1:3334/append_row ^  -H "Content-Type: application/json" ^  -d "{\"sheet_id\": \"1DR1gfwpruxAlkkYFcuWdrx7x5_8cWqTYHiqlAaNPTZU\", \"row_values\": [\"Alice\", \"alice@example.co
+m\", \"HR\"]}"
+{"appended":["Alice","alice@example.com","HR"],"status":"success"}
+
+C:\Users\Karan\Documents\Plugin_task\dify-google-sheets-plugin>curl -X POST http://127.0.0.1:3334/append_row ^  -H "Content-Type: application/json" ^  -d "{\"sheet_id\": \"1DR1gfwpruxAlkkYFcuWdrx7x5_8cWqTYHiqlAaNPTZU\", \"row_values\": [\"Bob\", \"bob@example.com\",
+ \"Finance\"]}"
+{"appended":["Bob","bob@example.com","Finance"],"status":"success"}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Curl test for viewing the contents of the sheet
+
+C:\Users\Karan\Documents\Plugin_task\dify-google-sheets-plugin>curl -X POST http://127.0.0.1:3334/read_sheet ^  -H "Content-Type: application/json" ^  -d "{\"sheet_id\": \"1DR1gfwpruxAlkkYFcuWdrx7x5_8cWqTYHiqlAaNPTZU\"}"
+{"rows":[["John Doe","john@example.com","Sales"],["Alice","alice@example.com","HR"],["Bob","bob@example.com","Finance"]],"status":"success"}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Curl test for updating sheet
+Updated value in C2 from sales to marketing
+
+C:\Users\Karan\Documents\Plugin_task\dify-google-sheets-plugin>curl -X POST http://127.0.0.1:3334/update_cell ^  -H "Content-Type: application/json" ^  -d "{\"sheet_id\": \"1DR1gfwpruxAlkkYFcuWdrx7x5_8cWqTYHiqlAaNPTZU\", \"cell\": \"C2\", \"value\": \"Marketing\"}" 
+{"status":"success","updated":{"C2":"Marketing"}}

@@ -1,0 +1,11 @@
+label:
+  en_US: Google Sheets Plugin
+description:
+  en_US: Interact with Google Sheets – append rows, update cells, and read sheet data.
+icon: icon.png
+tags: ['data-processing', 'spreadsheet']
+author: karan
+version: "1.0.0"
+name: google-sheets-plugin
+entry: start.sh
+openapi: openapi.yaml
